@@ -1,5 +1,5 @@
 rm(list=ls())
-setwd("C:/Users/Diana Contreras/OneDrive - Universidad de los Andes/1.Big Data/Problem Set 2")
+setwd("C:/Users/Camila/OneDrive - Universidad de los Andes/1.Big Data/Problem Set 2")
 
 install.packages("themis")
 require(data.table)
@@ -48,7 +48,7 @@ logit<-train(Pobre~ Dominio+Nhabitaciones + Ndormitorios + Arriendo + Tipovivien
                No_menores + No_adulto_mayor + ing_arrie_pen + ing_dividendo +
                informal,
              data=trainSplit,
-             method="glm",
+             method="glmnet",
              trControl=trainControl("cv", number =10, savePredictions=T),
              family="binomial",
              preProcess=c("center", "scale"),
